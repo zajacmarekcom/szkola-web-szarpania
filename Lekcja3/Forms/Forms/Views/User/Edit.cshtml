@@ -1,0 +1,30 @@
+﻿@model Forms.Models.EditUserViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All">
+
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+    <input asp-for="Age" />
+    <input asp-for="Password" />
+    <textarea asp-for="Description"></textarea>
+    <button type="submit">Wyślij</button>
+    <span asp-validation-for="MyFile"></span>
+    <input type="file" name="MyFile" />
+</form>
+
+
