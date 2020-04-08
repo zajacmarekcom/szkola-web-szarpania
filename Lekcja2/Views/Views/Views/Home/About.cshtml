@@ -1,0 +1,23 @@
+﻿@model Views.Models.AboutViewModel
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<h3>About</h3>
+
+<h3>@Model.User.Login</h3>
+<h4>@Model.Details.FirstName</h4>
+<h4>@Model.Details.LastName</h4>
+<h4>@Model.Details.Age</h4>
+@if(Model.Details.Age <= 18)
+{
+    <h4 style="color: red;">Użytkownik jest niepełnoletni</h4>
+}
+
+@foreach(var project in Model.Details.Projects)
+{
+    var projectName = string.Format("Nazwa projektu: {0}", project);
+
+    <h5>@projectName</h5>
+}
